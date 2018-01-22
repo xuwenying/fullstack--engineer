@@ -1,0 +1,75 @@
+数据库 用MAMP和WAMP搭建Web环境
+
+Web环境
+Web服务器：Apache，处理Web请求
+数据库：MySQL，存储和管理数据
+后端：PHP
+Web服务启动后，就可以在浏览器中访问根目录中的网站项目
+
+MAMP：Mac，Apache，MySQL，PHP，https://www.mamp.info/en/
+WAMP：Windows，Apache，MySQL，PHP，http://www.wampserver.com/en/
+
+
+一、端口设置：Apache、MySQL，端口只是一个后缀，不同服务使用不同端口，彼此不冲突
+1、打开Apache的httpd.conf,修改端口号
+#Listen 12.34.56.78:80
+Listen 0.0.0.0:80
+Listen [::0]:80
+
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+ServerName localhost:80
+
+改为
+#Listen 12.34.56.78:80
+Listen 0.0.0.0:8080
+Listen [::0]:8080
+# If your host doesn't have a registered DNS name, enter its IP address here.
+#
+ServerName localhost:8080
+
+2、打开Apache的httpd.vhosts,修改端口号
+<VirtualHost *:80>
+	ServerName localhost
+	ServerAlias localhost
+修改内容如下
+<VirtualHost *:8080>
+	ServerName localhost
+	ServerAlias localhost
+重启服务器端口号变为8080
+访问localhost:8080，无报错即可。
+
+二、根目录修改：
+安装的WAMP框架默认的project根目录在www文件夹下，若要更换根目录可做如下修改：
+以www/test/为例
+1、打开Apache的httpd.vhosts,修改内容：
+    DocumentRoot e:/wamp/www
+	<Directory  "e:/wamp/www/">
+
+	DocumentRoot e:/wamp/www/test
+	<Directory  "e:/wamp/www/test/">
+2、在test文件夹内建立index.html文件作为web主页，重启服务器后访问localhost:8080可以显示主页说明配置完成。
+
+三、局域网访问web网站：
+1、修改httpd.vhosts,
+		AllowOverride All
+		#Require local
+		Require all granted
+2、打开Apache的httpd.conf,修改如下
+<Directory />
+    AllowOverride none
+    #Require all denied
+    Require all granted
+</Directory>
+
+#   onlineoffline tag - don't remove
+    Require local
+    Require all granted
+</Directory>
+
+3、打开cmd，输入ipconfig查看本机的ip地址，局域网打开手机浏览器输入ip：8080即可访问。
+
+
+所有配置到此结束。
+
+
