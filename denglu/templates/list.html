@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block body %}
+<style>
+	.p {
+		padding: 30px;
+		border: 1px solid #888;
+		margin: 20px;
+	}
+</style>
+<h1>注册信息</h1>
+<div id="list">
+	{% for item in ppp %}
+		<div class="p">
+			<h4>{{item[0]}}</h4>
+			<p>{{item[1]}}</p>
+			<p>{{item[3]}}</p>
+
+		</div>
+	{% endfor %}
+
+</div>
+{% endblock %}
