@@ -1,0 +1,25 @@
+Web进阶 基于Flask的web服务器部署
+一款基于Python的轻量级后端框架
+
+Flask官网：http://flask.pocoo.org/docs/0.10/
+
+Flask安装按照如下链接进行：http://docs.jinkan.org/docs/flask/installation.html#virtualenv
+
+其他流行的Python框架：
+Django：https://www.djangoproject.com/
+Django比较笨重，但是还是挺好用的。
+
+步骤
+1、准备项目：static/、templates/、venv/、config.py、run.py
+2、数据库和config.py
+   对于config.py放置数据库的配置信息。
+3、layout.html，{% block body %} {% endblock %} {% extends 'layout.html' %}
+   制作一个模板套用，不用也可以！
+4、函数和渲染
+  run.py里面通过函数返回跳转渲染页面
+5、url_for() 实现函数操作
+
+6、表单实现form的表单输入页面建立
+
+7、处理表单并跳转提取数据存入后端数据库
+   读取数据和渲染实现后端数据库和前段数据的交互。
