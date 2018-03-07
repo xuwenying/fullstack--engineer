@@ -15,9 +15,15 @@
    
                 根据豆瓣电影网站爬取的电影时长等信息，存取到数据库中。
                 
-3、WAMP应用(Windows+Apache+mysql+python（php）)
+3、WAMP应用(Windows+Apache+mysql+python（php）)主要是解决一些配置问题
 
+   数据库 用MAMP和WAMP搭建Web环境,
 
+   Web环境
+   Web服务器：Apache，处理Web请求
+   数据库：MySQL，存储和管理数据
+   后端：python（PHP）
+   Web服务启动后，就可以在浏览器中访问根目录中的网站项目
 
                 
 4、 基于Flask的注册登陆系统
