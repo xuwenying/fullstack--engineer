@@ -65,7 +65,7 @@ import time
 
 # 请求每部电影的详情页面
 #for x in xrange(0, len(movies)):
-for x in xrange(0, 20):   #取前20部电影作为示例获取
+for x in xrange(0, 100):   #取前100部电影作为示例获取
 	url = movies[x]['url']
 	request = urllib2.Request(url=url)
 	response = urllib2.urlopen(request, timeout=20)
