@@ -15,7 +15,14 @@
    
                 根据豆瓣电影网站爬取的电影时长等信息，存取到数据库中。
                 
-3、 基于Flask的注册登陆系统
+3、WAMP应用(Windows+Apache+mysql+python（php）)
+
+
+
+                
+4、 基于Flask的注册登陆系统
+
+  Flask安装web服务器（用户注册为例）和前后端数据收集，数据显示等
 
    做了一个demo:
    
