@@ -9,7 +9,7 @@ from urllib2 import urlopen
 from bs4 import BeautifulSoup
 import warnings
 warnings.filterwarnings("ignore")
-import json
+
 
 file = open("WorkingReport.txt",'w')
 news_url = "http://news.ifeng.com/a/20180305/56472392_0.shtml"
